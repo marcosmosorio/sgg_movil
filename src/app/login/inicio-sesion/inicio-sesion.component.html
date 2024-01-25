@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-list>
+    <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+      <ion-item>
+        <ion-input
+          formControlName="Email"
+          type="email"
+          fill="clear"
+          label="Email"
+          labelPlacement="floating"
+          helperText="Enter a valid email"
+          errorText="Invalid email"
+          ngModel
+          email
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="Password" type="password" labelPlacement="stacked" label="Contraseña">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide">
+            <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit" [disabled]="!formLogin.valid">Iniciar</ion-button>
+    </form>
+  </ion-list>
+</ion-content>
