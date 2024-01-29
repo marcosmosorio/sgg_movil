@@ -1,4 +1,11 @@
 <ion-content>
+  <div>prueba</div>
+  <swiper-container effect="coverflow" [modules]="swiperModules" [loop]="true"
+  [pagination]="true" [zoom]="true" [autoplay]="{ delay: 5000 }">
+    <swiper-slide><img src="assets/El-proceso-scaled.jpg"></swiper-slide>
+    <swiper-slide><img src="assets/BB0B8960.jpg"></swiper-slide>
+    <swiper-slide><img src="assets/9.jpg"></swiper-slide>
+  </swiper-container>
   <ion-list>
     <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
       <ion-item>

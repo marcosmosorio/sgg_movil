@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { register } from 'swiper/element/bundle';
+import { IonicSlides } from '@ionic/angular';
+
+register();
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -8,6 +12,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./inicio-sesion.component.scss'],
 })
 export class InicioSesionComponent  implements OnInit {
+  swiperModules = [IonicSlides];
   formLogin: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,
