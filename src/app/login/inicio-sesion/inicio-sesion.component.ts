@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import { register } from 'swiper/element/bundle';
 import { IonicSlides } from '@ionic/angular';
+import { AppComponent } from 'src/app/app.component';
+
 
 register();
 
@@ -33,6 +35,10 @@ export class InicioSesionComponent  implements OnInit {
       console.log(this.formLogin.value);
     }
   }
-
-
+  accesoDev(){
+    this._router.navigate(['/menu-inicio']);
+  }
+  cambiarLogin(){
+    
+  }
 }

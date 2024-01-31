@@ -9,16 +9,16 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false">
-            <ion-item [routerDirection]="'root'" [routerLink]="'/listado'">
-              <ion-icon slot="start" [name]="'list'"></ion-icon>
-              <ion-label>
-                Listado
-              </ion-label>
-            </ion-item>
-            <ion-item [routerDirection]="'root'" [routerLink]="'/home'">
+            <ion-item [routerDirection]="'forward'" [routerLink]="'/menu-inicio'">
               <ion-icon slot="start" [name]="'home'"></ion-icon>
               <ion-label>
                 Inicio
+              </ion-label>
+            </ion-item>
+            <ion-item [routerDirection]="'back'" [routerLink]="'/asdsad'">
+              <ion-icon name="at-outline"></ion-icon>>
+              <ion-label>
+                IniciarSesion
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
