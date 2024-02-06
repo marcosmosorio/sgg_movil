@@ -4,7 +4,7 @@ import { Filesystem } from '@capacitor/filesystem';
 import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection  } from '@capacitor-community/sqlite';
 
 const dbName = 'baseBeta';
-const databaseDirectory = '../../../src/data/protoDB.sql';
+const databaseDirectory = './src/data/protoDB.sql';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,11 @@ export class ConectionDBService {
 
     // Obtener la ruta del directorio de la base de datos
     const databasePath = Capacitor.convertFileSrc(databaseDirectory);
+
+    const dbData = await Filesystem.readFile({
+      path: './src/data/pueba.txt',
+      
+    });
 
     // Verificar si el archivo de la base de datos existe
     const statResult  = await Filesystem.stat({ path: databasePath });
