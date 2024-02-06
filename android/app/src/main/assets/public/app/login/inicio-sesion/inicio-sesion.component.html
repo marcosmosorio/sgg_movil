@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- Aquí puedes agregar botones en el lado izquierdo del encabezado -->
+      <ion-button>
+        <ion-img src="assets/logo75.png"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Sistema Gestió de Generadores.
+    </ion-title>
+    <ion-buttons slot="end">
+      <!-- Aquí puedes agregar botones en el lado derecho del encabezado -->
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container effect="coverflow" [modules]="swiperModules" [loop]="true"
+  [pagination]="true" [zoom]="true" [autoplay]="{ delay: 5000 }">
+    <swiper-slide><ion-img src="assets/El-proceso-scaled.jpg"></ion-img></swiper-slide>
+    <swiper-slide><ion-img src="assets/BB0B8960.jpg"></ion-img></swiper-slide>
+    <swiper-slide><ion-img src="assets/9.jpg"></ion-img></swiper-slide>
+  </swiper-container>
+  <ion-list>
+    <form [formGroup]="formLogin" (ngSubmit)="submitForm()">
+      <ion-item>
+        <ion-input
+          formControlName="Email"
+          type="email"
+          fill="clear"
+          label="Email"
+          labelPlacement="floating"
+          ngModel
+          email
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input formControlName="Password" [type]="passwordFieldType" label="Contraseña" labelPlacement="floating" >
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide" (click)="togglePasswordVisibility()">
+            <ion-icon slot="icon-only" [name]="showPassword ? 'eye-off' : 'eye'" aria-hidden="true"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit" [disabled]="!formLogin.valid">Iniciar</ion-button>
+    </form>
+  </ion-list>
+</ion-content>
