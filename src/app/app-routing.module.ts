@@ -17,7 +17,11 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'login'
+  },  {
+    path: 'menu-inicio',
+    loadChildren: () => import('./menu-inicio/menu-inicio.module').then( m => m.MenuInicioPageModule)
   }
+
 ];
 
 @NgModule({
